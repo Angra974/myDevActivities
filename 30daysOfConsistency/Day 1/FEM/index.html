@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    height: 100%;
+    min-height: 100%;
+    --clr-darker: hsl(237, 12%, 33%);
+}
+
+@font-face {
+    font-family: "Kumbh Sans", sans-serif;
+    src: url(https://fonts.google.com/specimen/Kumbh + Sans);
+}
+
+
+html, body {
+    background: webkit-linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%)) fixed no-repeat;
+    background: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%)) fixed no-repeat;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: hsl(240, 6%, 50%);
+    font-size: 12px;
+}
+
+
+.container {
+    margin-top: 120px;
+    max-width: 920px;
+    width: 320px;
+    background-color: #fff;
+    border-radius: 25px;
+    min-height: 535px;
+    height: 100%;
+    margin-bottom: 100px;
+}
+
+.container-left {
+    display: flex;
+    position: relative;
+    height: 150px;
+    align-items: center;
+}
+
+.container-left__image > img {
+    position: absolute;
+    width: 280px;
+    top: -20px;
+    left: 20px;
+}
+
+.container-right {
+    margin-right: 15px;
+}
+
+.container-right__title {
+    padding-top: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 20px;
+    color: var(--clr-darker);
+}
+
+details {
+    margin: 10px;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+details[attribute="open"] {
+    font-weight: bold;
+}
+
+details:target {
+    font-weight: bold;
+}
+summary {
+    list-style: none;
+    padding: 10px;
+    position: relative;
+    margin: 10px;
+}
+
+summary:hover {
+ color: hsl(14, 88%, 65%)
+}
+
+.bolded p {
+    padding: 1px 20px;
+}
+.fa-solid {
+    color: hsl(14, 88%, 65%);
+    position: absolute;
+    right: 10px;
+}
+
+.emptyDiv {
+    display: none;
+    width: 0px;
+    height: 0px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+@media all and (max-width: 1043px) {
+    .container-left__image > picture > img {
+        position: absolute;
+        top: 0px;
+        left: 40px;
+    }
+
+    .container-left__image > picture + picture > img {
+        width: 245px;
+        margin: 3%;
+        position: absolute;
+        top: -82%;
+        left: 30px;
+    }
+}
+
+@media all and (min-width: 1044px) {
+    .container {
+        width: 80%;
+        max-width: 920px;
+        display: flex;
+        font-size: 14px;
+    }
+
+    .emptyDiv {
+        display: block;
+        top: 260px;
+        position: relative;
+        z-index: 1;
+        left: -95px;
+    }
+    .container-left,
+    .container-right {
+        overflow: hidden;
+        width: 50%;
+        height: 100%;
+        min-height: 555px;
+    }
+
+    .container-right {
+        margin-right: 75px;
+    }
+
+    .container-left__image {
+        height: 100%;
+        width: 100%;
+    }
+
+    .container-left__image > picture > img {
+        position: absolute;
+        top: -270px;
+        left: -600px;
+    }
+
+    .container-left__image > picture + picture > img {
+        position: absolute;
+        top: 130px;
+        left: -80px;
+    }
+}
+
+.bolded > summary {
+    font-weight: bold;
+    color: var(--clr-darker);
+}
+
+a, a:link, a:active, a:visited, a:hover, a:active:hover{
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+               <div class="emptyDiv"><img src="./images/illustration-box-desktop.svg" alt="box" /></div>
+
+    <div class="container-left">
+        <div class="container-left__image">
+       <picture>
+            <source srcset="./images/bg-pattern-desktop.svg" media="(min-width: 1044px)" />
+            <source srcset="./images/bg-pattern-mobile.svg" media="(max-width: 1043px)" />
+            <img src="./images/bg-pattern-mobile.svg"    alt="Pattern" />
+          </picture>
+
+       <picture>
+            <source srcset="./images/illustration-woman-online-desktop.svg" media="(min-width: 1044px)" />
+            <source srcset="./images/illustration-woman-online-mobile.svg" media="(max-width: 1043px)" />
+          <img src="./images/illustration-woman-online-mobile.svg" alt="Illustration of an online woman" />
+          </picture>
+        </div>
+
+    </div>
+    <div class="container-right">
+        <div class="container-right__title">
+              FAQ
+        </div>
+        <div class="container-right__content">
+          <details>
+  <summary>  How many team members can I invite?<i class="fa-solid fa-chevron-down"></i></summary>
+  <p>  You can invite up to 2 additional users on the Free plan. There is no limit on
+  team members for the Premium plan.
+</p>
+</details>
+        </div>
+
+<div class="container-right__content">
+          <details>
+  <summary>  What is the maximum file upload size?<i class="fa-solid fa-chevron-down"></i></summary>
+  <p>
+  No more than 2GB. All files in your account must fit your allotted storage space.
+</p>
+</details>
+        </div>
+        <div class="container-right__content">
+          <details>
+  <summary>  How do I reset my password?<i class="fa-solid fa-chevron-down"></i>
+</summary>
+  <p>  Click “Forgot password” from the login page or “Change password” from your profile page.
+  A reset link will be emailed to you.
+</p>
+</details>
+        </div>
+        <div class="container-right__content">
+          <details>
+  <summary>  Can I cancel my subscription?<i class="fa-solid fa-chevron-down"></i></summary>
+  <p>
+  Yes! Send us a message and we’ll process your request no questions asked.
+</p>
+</details>
+        </div>
+        <div class="container-right__content">
+          <details>
+  <summary>  Do you provide additional support?<i class="fa-solid fa-chevron-down"></i></summary>
+  <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+</details>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Parlier Thierry</a>.
+  </div>
+
+  <script>
+    (() => {
+      // Select all details
+        const details = document.querySelectorAll('details');
+
+        // forEach details ( forEach = no return needed )
+        details.forEach((detail) => {
+
+
+              detail.addEventListener('click', (e) => {
+
+                    // made the summary bolded so we can see what is selected quickly
+                    e.currentTarget.classList.add('bolded');
+
+                    // Select the chevron for this details summary
+                    let child = e.currentTarget.querySelector('.fa-solid');
+
+                    // change chevron, toggle it
+                    if(child.classList.contains('fa-chevron-down')) {
+                        child.classList.remove('fa-chevron-down');
+                        child.classList.add('fa-chevron-up');
+                    } else {
+                        child.classList.remove('fa-chevron-up');
+                        child.classList.add('fa-chevron-down');
+                    }
+
+                    // Close all the details that are not targeted
+                  details.forEach((item) => {
+                    if (detail !== item) {
+                      item.removeAttribute("open");
+                      item.classList.remove("bolded");
+                    }
+                  });
+              })
+        })
+
+    })();
+
+
+  </script>
+</body>
+</html>
